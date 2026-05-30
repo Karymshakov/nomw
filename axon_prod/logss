@@ -1,0 +1,781 @@
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Установите последнюю версию PowerShell для новых функций и улучшения! https://aka.ms/PSWindows
+
+(.venv) PS C:\Users\User\PycharmProjects\cayu\nomw-my_changes> .venv\Scripts\python.exe backend\manage.py runserver
+2026-05-26 22:59:47 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-05-26 22:59:48 INFO apps.leads.ai_service AI service: using Gemini (gemini-2.5-flash) via OpenAI-compatible API
+2026-05-26 22:59:55 INFO django.server "POST /api/auth/login/ HTTP/1.1" 200 834
+2026-05-26 22:59:55 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-26 22:59:55 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-26 22:59:55 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 61
+2026-05-26 22:59:55 INFO django.server "GET /api/leads/source_stats/ HTTP/1.1" 200 33
+2026-05-26 22:59:55 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-26 22:59:55 INFO django.server "GET /api/leads/ HTTP/1.1" 200 4900
+2026-05-26 22:59:56 INFO django.server "GET /api/integrations/telegram/status/ HTTP/1.1" 200 150
+2026-05-26 22:59:57 INFO django.server "GET /api/integrations/whatsapp/status/ HTTP/1.1" 200 134
+2026-05-26 22:59:57 INFO django.server "GET /api/integrations/instagram/status/ HTTP/1.1" 200 495
+2026-05-26 22:59:58 INFO django.server "POST /api/communications/mark-read/ HTTP/1.1" 200 17
+2026-05-26 22:59:58 INFO django.server "GET /api/lead-activities/?lead=12 HTTP/1.1" 200 14138
+2026-05-26 22:59:58 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 41
+2026-05-26 23:00:01 INFO django.server "POST /api/leads/12/reset-ai-memory/ HTTP/1.1" 200 1687
+2026-05-26 23:00:01 INFO django.server "GET /api/lead-activities/?lead=12 HTTP/1.1" 200 14602
+2026-05-26 23:00:01 INFO django.server "GET /api/lead-activities/?lead=12 HTTP/1.1" 200 14602
+2026-05-26 23:00:01 INFO django.server "GET /api/leads/ HTTP/1.1" 200 4670
+2026-05-26 23:00:03 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-26 23:00:03 INFO django.server "GET /api/leads/ HTTP/1.1" 200 4670
+2026-05-26 23:00:06 INFO django.server "DELETE /api/leads/12/ HTTP/1.1" 204 0
+2026-05-26 23:00:06 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-26 23:00:06 INFO django.server "GET /api/leads/ HTTP/1.1" 200 3213
+2026-05-26 23:00:28 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 41
+2026-05-26 23:00:43 INFO apps.leads.telegram_views Auto-created lead 13 from Telegram chat_id: 7017588699
+2026-05-26 23:00:43 INFO apps.leads.telegram_views Received Telegram message from lead 13: Здравствуйте, хотим к вам приехать, можете рассказ
+2026-05-26 23:00:43 INFO apps.leads.telegram_views Background AI thread started for lead 13
+2026-05-26 23:00:43 INFO apps.leads.telegram_views Lead 13: background AI thread dispatched
+2026-05-26 23:00:43 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-26 23:00:45 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:00:45 ERROR apps.leads.ai_service Error generating agent response: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2237, in generate_response_with_messages
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:00:45 INFO apps.leads.conversation_analyzer AI progressed lead 13 from new to contacted: Inbound message received
+2026-05-26 23:00:45 INFO apps.leads.goal_manager Created goal 'collect_email' for lead 13
+2026-05-26 23:00:45 INFO apps.leads.goal_manager Created goal 'collect_phone' for lead 13
+2026-05-26 23:00:45 INFO apps.leads.goal_manager Created goal 'qualify_lead' for lead 13
+2026-05-26 23:00:45 INFO apps.leads.goal_manager Created goal 'schedule_call' for lead 13
+2026-05-26 23:00:45 INFO apps.leads.agent_service Processed incoming message for lead 13: 1 actions taken
+2026-05-26 23:00:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:00:52 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:00:57 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:01:01 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:01:06 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:01:11 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:01:16 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:01:22 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:01:25 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:01:27 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:01:27 ERROR apps.leads.agent_dispatcher [IntentRouter] classification failed: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:01:27 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=13 intent=booking confidence=1.00 booking_step=None
+2026-05-26 23:01:27 INFO apps.leads.ai_service Flow: starting lead 13 at entry card 'Welcome & Greeting'
+2026-05-26 23:01:27 INFO apps.leads.ai_service generate_response called: 'Здравствуйте, хотим к вам приехать, можете рассказать про от'
+2026-05-26 23:01:27 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-26 23:01:46 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:01:46 WARNING apps.leads.ai_service Tool-call API failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), retrying with tools (backoff) then plain
+2026-05-26 23:01:48 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:01:48 WARNING apps.leads.ai_service Tool-call retry 1/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}])
+2026-05-26 23:01:50 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:01:50 WARNING apps.leads.ai_service Tool-call retry 2/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}])
+2026-05-26 23:01:56 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:01:56 WARNING apps.leads.ai_service Tool-call retry 3/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}])
+2026-05-26 23:01:58 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:01:58 WARNING apps.leads.ai_service Plain retry 1/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), waiting 1s before next attempt
+2026-05-26 23:02:01 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:02:01 WARNING apps.leads.ai_service Plain retry 2/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), waiting 2s before next attempt
+2026-05-26 23:02:07 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:02:07 WARNING apps.leads.ai_service Plain retry 3/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), waiting 4s before next attempt
+2026-05-26 23:02:07 ERROR apps.leads.ai_service All retries exhausted after API errors: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]. Returning fallback message.
+2026-05-26 23:02:07 INFO apps.leads.ai_service Generated AI response (length: 234)
+2026-05-26 23:02:07 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:02:07 INFO apps.leads.telegram_views Sent AI auto-response to lead 13 (1 message(s))
+2026-05-26 23:02:08 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:02:08 WARNING apps.leads.ai_service Conversation summary generation failed: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:02:11 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:02:11 INFO apps.leads.ai_service Extracted lead data: {}
+2026-05-26 23:02:23 INFO apps.leads.telegram_views Received Telegram message from lead 13: Здравствуйте, хотим к вам приехать, можете рассказ
+2026-05-26 23:02:23 INFO apps.leads.telegram_views Background AI thread started for lead 13
+2026-05-26 23:02:23 INFO apps.leads.telegram_views Lead 13: background AI thread dispatched
+2026-05-26 23:02:23 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-26 23:02:30 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:02:30 INFO apps.leads.ai_service Generated agent response (length: 878)
+2026-05-26 23:02:30 INFO apps.leads.conversation_analyzer AI progressed lead 13 from contacted to nurturing: The lead expressed interest and asked for information, but the agent's response was an automated message asking the lead to repeat the
+ir query. The lead then repeated the exact same message. No new information was exchanged, and the lead is still in the information-gathering phase. The current stage 'contacted' is still appropriate as the conversation has not advanced beyond the initial contact and information request.
+2026-05-26 23:02:30 INFO apps.leads.agent_service Processed incoming message for lead 13: 1 actions taken
+2026-05-26 23:02:31 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:02:36 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:02:41 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:02:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:02:51 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:02:55 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:00 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:05 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:07 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:09 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:03:09 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=13 intent=booking confidence=0.90 booking_step=None
+2026-05-26 23:03:09 INFO apps.leads.ai_service Flow: lead 13 advanced to 'Room Selection' (type=normal)
+2026-05-26 23:03:09 INFO apps.leads.ai_service generate_response called: 'Здравствуйте, хотим к вам приехать, можете рассказать про от'
+2026-05-26 23:03:10 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-26 23:03:11 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:03:11 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Здравствуйте! Чтобы я мог рассказать вам о номерах и их наличии, подскажите, пожалуйста, сколько человек планируют приехать и на какие даты вас интересует размещение?
+2026-05-26 23:03:11 INFO apps.leads.ai_service Generated AI response (length: 166)
+2026-05-26 23:03:11 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:03:11 INFO apps.leads.telegram_views Sent AI auto-response to lead 13 (1 message(s))
+2026-05-26 23:03:13 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:03:13 INFO apps.leads.telegram_views Updated conversation summary for lead 13: Гость интересуется отелем и номерами, агент запрашивает даты
+2026-05-26 23:03:16 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:03:16 INFO apps.leads.ai_service Extracted lead data: {'problem_description': 'хотим к вам приехать, можете рассказать про отель, что у вас есть и какие номера есть?'}
+2026-05-26 23:03:16 INFO apps.leads.telegram_views Auto-extracted and updated fields for lead 13: ['problem_description']
+2026-05-26 23:03:30 INFO apps.leads.telegram_views Received Telegram message from lead 13: нас 4, две пары
+2026-05-26 23:03:30 INFO apps.leads.telegram_views Background AI thread started for lead 13
+2026-05-26 23:03:30 INFO apps.leads.telegram_views Lead 13: background AI thread dispatched
+2026-05-26 23:03:30 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-26 23:03:32 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:03:32 ERROR apps.leads.ai_service Error generating agent response: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2237, in generate_response_with_messages
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:03:32 INFO apps.leads.agent_service Processed incoming message for lead 13: 0 actions taken
+2026-05-26 23:03:34 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:38 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:48 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:53 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:03:58 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:04:03 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:04:08 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 61
+2026-05-26 23:04:08 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:04:11 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:04:12 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:04:12 ERROR apps.leads.agent_dispatcher [IntentRouter] classification failed: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:04:12 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=13 intent=booking confidence=1.00 booking_step=None
+2026-05-26 23:04:12 INFO apps.leads.ai_service generate_response called: 'нас 4, две пары'
+2026-05-26 23:04:12 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-26 23:04:14 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:04:14 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Отлично, четыре человека! Чтобы предложить вам лучшие варианты, мне ещё нужны даты заезда и выезда. Подскажите, пожалуйста, на какие даты вы планируете приехать? 😊
+2026-05-26 23:04:14 INFO apps.leads.ai_service Generated AI response (length: 163)
+2026-05-26 23:04:15 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:04:15 INFO apps.leads.telegram_views Sent AI auto-response to lead 13 (1 message(s))
+2026-05-26 23:04:16 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:04:16 INFO apps.leads.telegram_views Updated conversation summary for lead 13: Четыре гостя (две пары) интересуются номерами, даты заезда у
+2026-05-26 23:04:18 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:04:18 INFO apps.leads.ai_service Extracted lead data: {'guest_count': 4, 'problem_description': 'хотим к вам приехать, можете рассказать про отель, что у вас есть и какие номера есть?'}
+2026-05-26 23:04:18 INFO apps.leads.telegram_views Auto-extracted and updated fields for lead 13: ['guest_count']
+2026-05-26 23:04:38 INFO apps.leads.telegram_views Received Telegram message from lead 13: 4 июня дней на 5
+2026-05-26 23:04:38 INFO apps.leads.telegram_views Background AI thread started for lead 13
+2026-05-26 23:04:38 INFO apps.leads.telegram_views Lead 13: background AI thread dispatched
+2026-05-26 23:04:38 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-26 23:04:55 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:04:55 ERROR apps.leads.ai_service Error generating agent response: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2237, in generate_response_with_messages
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:04:55 INFO apps.leads.agent_service Processed incoming message for lead 13: 0 actions taken
+2026-05-26 23:04:56 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:01 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:06 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:12 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:22 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:28 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:33 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:37 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:38 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:05:38 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=13 intent=booking confidence=1.00 booking_step=None
+2026-05-26 23:05:38 INFO apps.leads.ai_service generate_response called: '4 июня дней на 5'
+2026-05-26 23:05:38 INFO apps.leads.ai_service [AI Tools Filter] guest_count=4 and group composition unknown. Removing pricing tools to force asking about children/together preference.
+2026-05-26 23:05:38 INFO apps.leads.ai_service [AI tools registered] ['get_room_images', 'transfer_to_manager']
+2026-05-26 23:05:40 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:05:40 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Поняла! 4 июня на 5 дней для четырех взрослых.
+
+Будут ли с вами дети? И хотите ли жить все вместе в одном пространстве или вас устроят отдельные номера рядом?
+2026-05-26 23:05:40 INFO apps.leads.ai_service Generated AI response (length: 158)
+2026-05-26 23:05:41 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:05:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:05:44 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:05:44 INFO apps.leads.telegram_views Sent AI auto-response to lead 13 (2 message(s))
+2026-05-26 23:05:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:05:49 INFO apps.leads.telegram_views Updated conversation summary for lead 13: 4 взрослых, 4 июня на 5 дней, две пары, уточнение размещения
+2026-05-26 23:05:51 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:05:51 INFO apps.leads.ai_service Extracted lead data: {'problem_description': 'хотим к вам приехать, можете рассказать про отель, что у вас есть и какие номера есть?', 'check_in_date': '2026-06-04', 'check_out_date': '2026-06-09', 'guest_count': 4}
+2026-05-26 23:05:51 INFO apps.leads.telegram_views Auto-extracted and updated fields for lead 13: ['check_in_date', 'check_out_date']
+2026-05-26 23:05:54 INFO apps.leads.telegram_views Received Telegram message from lead 13: отдельные номера
+2026-05-26 23:05:54 INFO apps.leads.telegram_views Background AI thread started for lead 13
+2026-05-26 23:05:54 INFO apps.leads.telegram_views Lead 13: background AI thread dispatched
+2026-05-26 23:05:54 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-26 23:06:03 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:06:03 INFO apps.leads.ai_service Generated agent response (length: 905)
+2026-05-26 23:06:03 INFO apps.leads.goal_manager Completed goal 'qualify_lead' for lead 13
+2026-05-26 23:06:03 INFO apps.leads.agent_service Processed incoming message for lead 13: 1 actions taken
+2026-05-26 23:06:04 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:10 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:15 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:21 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:26 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:32 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:37 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:06:48 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:06:48 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=13 intent=booking confidence=1.00 booking_step=None
+2026-05-26 23:06:48 INFO apps.leads.ai_service generate_response called: 'отдельные номера'
+2026-05-26 23:06:48 INFO apps.leads.ai_service [get_room_options] Family keyword 'дети' detected for lead 13 — returning family combos only
+2026-05-26 23:06:48 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-26 23:06:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:06:49 WARNING apps.leads.ai_service Tool-call API failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), retrying with tools (backoff) then plain
+2026-05-26 23:06:52 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] INPUT: guest_count=2, checkin_date=2026-06-04, checkout_date=2026-06-09, total_nights=5
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] group found: 3 combinations
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 36000}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 44000}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 52000}}
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] raw prices dict={'standard': 9500, 'with_breakfast': 10900, 'half_board': 12500, 'full_board': 14100}
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 10900, 'label': 'С завтраком', 'total': 54500}, 'half_board': {'per_night': 12500, 'label': 'Полупансион (завтрак + ужин)', 'total': 62500}, 'full_board': {'per_night': 14100, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 70500}}
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 36000}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 44000}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 52000}}
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options] returning 2 standard combinations to AI
+2026-05-26 23:06:52 INFO apps.leads.ai_service [get_room_options DEBUG] FINAL RESPONSE JSON: {"guest_count": 2, "combinations": [{"description": "стандарт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800,
+ "meal_plans": {"with_breakfast": {"per_night": 7200, "label": "С завтраком", "total": 36000}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 44000}, "full_board": {"per_night": 10400, "label": "Полный панс
+ион (завтрак + обед + ужин)", "total": 52000}}, "note": "", "room_type_key": "стандарт двухместный", "standard_price_total": 29000}, {"description": "комфорт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 95
+00, "meal_plans": {"with_breakfast": {"per_night": 10900, "label": "С завтраком", "total": 54500}, "half_board": {"per_night": 12500, "label": "Полупансион (завтрак + ужин)", "total": 62500}, "full_board": {"per_night": 14100, "label": "Полный
+ пансион (завтрак + обед + ужин)", "total": 70500}}, "note": "", "room_type_key": "комфорт двухместный", "standard_price_total": 47500}], "_note": "All prices pre-calculated — AI must NOT perform any arithmetic. meal_plans.per_night is the COM
+BINED total for all rooms in this combination — quote it directly, never say \"per room\". Reveal meal_plans ONLY after the guest picks a room. CRITICAL: Use ONLY the prices in this tool response. NEVER use prices from example conversations, c
+onversation history, or memory — those are outdated and incorrect. For multi-room combinations (is_multi_room=true), mention that rooms will be adjacent if possible. If family_alternatives is non-empty, explicitly mention that a family option
+is also available and show its standard per-night price.", "family_alternatives": [{"description": "семейный один номер", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800, "meal_plans": {"with_breakfast": {"per_night":
+ 7200, "label": "С завтраком", "total": 36000}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 44000}, "full_board": {"per_night": 10400, "label": "Полный пансион (завтрак + обед + ужин)", "total": 52000}}, "note": "", "room_type_key": "семейный один номер", "standard_price_total": 29000}], "checkin_date": "2026-06-04", "checkout_date": "2026-06-09", "total_nights": 5}
+2026-05-26 23:06:54 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:06:54 WARNING apps.leads.ai_service Tool-call retry 1/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}])
+2026-05-26 23:06:58 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] INPUT: guest_count=2, checkin_date=2026-06-04, checkout_date=2026-06-09, total_nights=5
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] group found: 3 combinations
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 36000}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 44000}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 52000}}
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] raw prices dict={'standard': 9500, 'with_breakfast': 10900, 'half_board': 12500, 'full_board': 14100}
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 10900, 'label': 'С завтраком', 'total': 54500}, 'half_board': {'per_night': 12500, 'label': 'Полупансион (завтрак + ужин)', 'total': 62500}, 'full_board': {'per_night': 14100, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 70500}}
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 36000}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 44000}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 52000}}
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options] returning 2 standard combinations to AI
+2026-05-26 23:06:58 INFO apps.leads.ai_service [get_room_options DEBUG] FINAL RESPONSE JSON: {"guest_count": 2, "combinations": [{"description": "стандарт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800,
+ "meal_plans": {"with_breakfast": {"per_night": 7200, "label": "С завтраком", "total": 36000}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 44000}, "full_board": {"per_night": 10400, "label": "Полный панс
+ион (завтрак + обед + ужин)", "total": 52000}}, "note": "", "room_type_key": "стандарт двухместный", "standard_price_total": 29000}, {"description": "комфорт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 95
+00, "meal_plans": {"with_breakfast": {"per_night": 10900, "label": "С завтраком", "total": 54500}, "half_board": {"per_night": 12500, "label": "Полупансион (завтрак + ужин)", "total": 62500}, "full_board": {"per_night": 14100, "label": "Полный
+ пансион (завтрак + обед + ужин)", "total": 70500}}, "note": "", "room_type_key": "комфорт двухместный", "standard_price_total": 47500}], "_note": "All prices pre-calculated — AI must NOT perform any arithmetic. meal_plans.per_night is the COM
+BINED total for all rooms in this combination — quote it directly, never say \"per room\". Reveal meal_plans ONLY after the guest picks a room. CRITICAL: Use ONLY the prices in this tool response. NEVER use prices from example conversations, c
+onversation history, or memory — those are outdated and incorrect. For multi-room combinations (is_multi_room=true), mention that rooms will be adjacent if possible. If family_alternatives is non-empty, explicitly mention that a family option
+is also available and show its standard per-night price.", "family_alternatives": [{"description": "семейный один номер", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800, "meal_plans": {"with_breakfast": {"per_night":
+ 7200, "label": "С завтраком", "total": 36000}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 44000}, "full_board": {"per_night": 10400, "label": "Полный пансион (завтрак + обед + ужин)", "total": 52000}}, "note": "", "room_type_key": "семейный один номер", "standard_price_total": 29000}], "checkin_date": "2026-06-04", "checkout_date": "2026-06-09", "total_nights": 5}
+2026-05-26 23:07:00 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:07:00 WARNING apps.leads.ai_service Tool-call retry 2/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}])
+2026-05-26 23:07:07 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] INPUT: guest_count=2, checkin_date=2026-06-04, checkout_date=2026-06-09, total_nights=5
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] group found: 3 combinations
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 36000}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 44000}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 52000}}
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] raw prices dict={'standard': 9500, 'with_breakfast': 10900, 'half_board': 12500, 'full_board': 14100}
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 10900, 'label': 'С завтраком', 'total': 54500}, 'half_board': {'per_night': 12500, 'label': 'Полупансион (завтрак + ужин)', 'total': 62500}, 'full_board': {'per_night': 14100, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 70500}}
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 36000}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 44000}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 52000}}
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options] returning 2 standard combinations to AI
+2026-05-26 23:07:07 INFO apps.leads.ai_service [get_room_options DEBUG] FINAL RESPONSE JSON: {"guest_count": 2, "combinations": [{"description": "стандарт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800,
+ "meal_plans": {"with_breakfast": {"per_night": 7200, "label": "С завтраком", "total": 36000}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 44000}, "full_board": {"per_night": 10400, "label": "Полный панс
+ион (завтрак + обед + ужин)", "total": 52000}}, "note": "", "room_type_key": "стандарт двухместный", "standard_price_total": 29000}, {"description": "комфорт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 95
+00, "meal_plans": {"with_breakfast": {"per_night": 10900, "label": "С завтраком", "total": 54500}, "half_board": {"per_night": 12500, "label": "Полупансион (завтрак + ужин)", "total": 62500}, "full_board": {"per_night": 14100, "label": "Полный
+ пансион (завтрак + обед + ужин)", "total": 70500}}, "note": "", "room_type_key": "комфорт двухместный", "standard_price_total": 47500}], "_note": "All prices pre-calculated — AI must NOT perform any arithmetic. meal_plans.per_night is the COM
+BINED total for all rooms in this combination — quote it directly, never say \"per room\". Reveal meal_plans ONLY after the guest picks a room. CRITICAL: Use ONLY the prices in this tool response. NEVER use prices from example conversations, c
+onversation history, or memory — those are outdated and incorrect. For multi-room combinations (is_multi_room=true), mention that rooms will be adjacent if possible. If family_alternatives is non-empty, explicitly mention that a family option
+is also available and show its standard per-night price.", "family_alternatives": [{"description": "семейный один номер", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800, "meal_plans": {"with_breakfast": {"per_night":
+ 7200, "label": "С завтраком", "total": 36000}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 44000}, "full_board": {"per_night": 10400, "label": "Полный пансион (завтрак + обед + ужин)", "total": 52000}}, "note": "", "room_type_key": "семейный один номер", "standard_price_total": 29000}], "checkin_date": "2026-06-04", "checkout_date": "2026-06-09", "total_nights": 5}
+2026-05-26 23:07:12 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:07:12 INFO apps.leads.ai_service Tool-call retry 3 succeeded after initial API error
+2026-05-26 23:07:12 INFO apps.leads.ai_service Generated AI response (length: 408)
+2026-05-26 23:07:14 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:07:15 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:07:16 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:07:16 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:07:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:07:19 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:07:21 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:07:21 INFO apps.leads.telegram_views Sent AI auto-response to lead 13 (4 message(s))
+2026-05-26 23:07:23 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:07:23 INFO apps.leads.telegram_views Updated conversation summary for lead 13: Две пары ищут отдельные номера с 4 по 9 июня, агент предлага
+2026-05-26 23:07:24 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:07:24 ERROR apps.leads.ai_service Error extracting lead data: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2456, in extract_lead_data
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:07:56 INFO apps.leads.telegram_views Received Telegram message from lead 13: давайте стандарт
+2026-05-26 23:07:56 INFO apps.leads.telegram_views Background AI thread started for lead 13
+2026-05-26 23:07:56 INFO apps.leads.telegram_views Lead 13: background AI thread dispatched
+2026-05-26 23:07:56 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-26 23:07:57 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-26 23:07:57 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-26 23:07:57 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-26 23:07:57 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-26 23:07:57 INFO django.server "GET /api/leads/ HTTP/1.1" 200 5091
+2026-05-26 23:07:58 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-26 23:07:58 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 61
+2026-05-26 23:07:58 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-26 23:07:58 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-26 23:07:58 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-26 23:07:58 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-26 23:07:58 INFO django.server "GET /api/leads/ HTTP/1.1" 200 5091
+2026-05-26 23:07:58 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-26 23:08:00 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:08:00 ERROR apps.leads.ai_service Error generating agent response: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2237, in generate_response_with_messages
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:08:00 INFO apps.leads.agent_service Processed incoming message for lead 13: 0 actions taken
+2026-05-26 23:08:01 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:07 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:12 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:23 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:28 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 61
+2026-05-26 23:08:29 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:34 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:40 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:08:45 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:08:45 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=13 intent=booking confidence=1.00 booking_step=None
+2026-05-26 23:08:45 INFO apps.leads.ai_service Flow: lead 13 advanced to 'Meal Plan Selection' (type=normal)
+2026-05-26 23:08:45 INFO apps.leads.ai_service generate_response called: 'давайте стандарт'
+2026-05-26 23:08:45 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-26 23:08:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:08:49 WARNING apps.leads.ai_service Tool-call API failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), retrying with tools (backoff) then plain
+2026-05-26 23:08:51 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:08:51 WARNING apps.leads.ai_service Tool-call retry 1/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}])
+2026-05-26 23:08:56 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:08:56 WARNING apps.leads.ai_service Tool-call retry 2/3 failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}])
+2026-05-26 23:09:02 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:09:02 INFO apps.leads.ai_service Tool-call retry 3 succeeded after initial API error
+2026-05-26 23:09:02 INFO apps.leads.ai_service Generated AI response (length: 148)
+2026-05-26 23:09:02 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:09:02 INFO apps.leads.telegram_views Sent AI auto-response to lead 13 (1 message(s))
+2026-05-26 23:09:05 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:09:05 INFO apps.leads.telegram_views Updated conversation summary for lead 13: Выбор питания для двух стандартных номеров на 4-9 июня для 4
+2026-05-26 23:09:06 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:09:06 ERROR apps.leads.ai_service Error extracting lead data: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2456, in extract_lead_data
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:09:36 INFO apps.leads.telegram_views Received Telegram message from lead 13: 7200 это только за питание???
+2026-05-26 23:09:36 INFO apps.leads.telegram_views Background AI thread started for lead 13
+2026-05-26 23:09:36 INFO apps.leads.telegram_views Lead 13: background AI thread dispatched
+2026-05-26 23:09:36 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-26 23:09:38 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:09:38 ERROR apps.leads.ai_service Error generating agent response: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2237, in generate_response_with_messages
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:09:38 INFO apps.leads.agent_service Processed incoming message for lead 13: 0 actions taken
+2026-05-26 23:09:40 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:09:45 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:09:51 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:09:56 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:02 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:07 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:12 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:17 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:20 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:21 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:10:21 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=13 intent=booking confidence=0.90 booking_step=None
+2026-05-26 23:10:21 INFO apps.leads.ai_service generate_response called: '7200 это только за питание???'
+2026-05-26 23:10:22 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-26 23:10:25 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:10:25 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Приношу извинения за возможное недопонимание! 🙏 Цена в 7200 сомов за ночь — это общая стоимость за номер **вместе с завтраком**.
+
+Напомню, что стандартный номер без питания стоит 5800 сомов за ночь.
+
+Таким образом, если вы выбираете:
+*   **Только завтрак:** 7200 сомов за ночь (это включает номер + завтрак).
+*   **Завтрак и ужин:** 8600 сомов за ночь (это включает номер + завтрак и ужин).
+*   **Трехразовое питание:** 10000 сомов за ночь (это включает номер + завтрак, обед и ужин).
+
+Какой вариант вам больше подходит?
+2026-05-26 23:10:25 INFO apps.leads.ai_service Generated AI response (length: 520)
+2026-05-26 23:10:26 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:10:28 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:29 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:10:31 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:32 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:10:34 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-26 23:10:35 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 23:10:35 INFO apps.leads.telegram_views Sent AI auto-response to lead 13 (4 message(s))
+2026-05-26 23:10:38 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-26 23:10:38 INFO apps.leads.telegram_views Updated conversation summary for lead 13: Уточнение цены стандартного номера с завтраком для двух взро
+2026-05-26 23:10:41 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-26 23:10:41 ERROR apps.leads.ai_service Error extracting lead data: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2456, in extract_lead_data
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-26 23:10:46 INFO django.server "GET /api/playbooks/ HTTP/1.1" 200 44469
+2026-05-26 23:10:46 INFO django.server "GET /api/hotel-media/ HTTP/1.1" 200 13858
+2026-05-26 23:10:47 INFO django.server "GET /api/room-pricing/ HTTP/1.1" 200 3000
+2026-05-26 23:10:47 ERROR django.request Internal Server Error: /api/room-combinations/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\hotel_info\views.py", line 749, in room_combinations
+    notes_qs = notes_qs.filter(organization=org)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1495, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1513, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1523, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1648, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1680, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1528, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1335, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1813, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'organization' into field. Choices are: combination_index, combination_type, guest_count, id, is_custom, is_hidden, note, rooms, updated_at
+2026-05-26 23:10:47 ERROR django.server "GET /api/room-combinations/ HTTP/1.1" 500 25870
+2026-05-26 23:10:48 ERROR django.request Internal Server Error: /api/room-combinations/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\hotel_info\views.py", line 749, in room_combinations
+    notes_qs = notes_qs.filter(organization=org)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1495, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1513, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1523, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1648, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1680, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1528, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1335, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1813, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'organization' into field. Choices are: combination_index, combination_type, guest_count, id, is_custom, is_hidden, note, rooms, updated_at
+2026-05-26 23:10:48 ERROR django.server "GET /api/room-combinations/ HTTP/1.1" 500 25870
+2026-05-26 23:10:58 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 61
+2026-05-26 23:11:28 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 61
+2026-05-26 23:11:50 ERROR django.request Internal Server Error: /api/room-combinations/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\hotel_info\views.py", line 749, in room_combinations
+    notes_qs = notes_qs.filter(organization=org)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1495, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1513, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1523, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1648, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1680, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1528, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1335, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1813, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'organization' into field. Choices are: combination_index, combination_type, guest_count, id, is_custom, is_hidden, note, rooms, updated_at
+2026-05-26 23:11:50 ERROR django.server "GET /api/room-combinations/ HTTP/1.1" 500 25870
+2026-05-26 23:11:51 ERROR django.request Internal Server Error: /api/room-combinations/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\hotel_info\views.py", line 749, in room_combinations
+    notes_qs = notes_qs.filter(organization=org)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1495, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1513, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\query.py", line 1523, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1648, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1680, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1528, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1335, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1813, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'organization' into field. Choices are: combination_index, combination_type, guest_count, id, is_custom, is_hidden, note, rooms, updated_at
+2026-05-26 23:11:51 ERROR django.server "GET /api/room-combinations/ HTTP/1.1" 500 25870
+2026-05-26 23:11:58 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 61

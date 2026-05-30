@@ -1,0 +1,510 @@
+
+(.venv) PS C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend> python manage.py runserver
+2026-05-30 17:55:17 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-05-30 17:55:18 INFO apps.leads.ai_service AI service: using Gemini (gemini-2.5-flash) via OpenAI-compatible API
+2026-05-30 17:55:45 INFO apps.leads.telegram_views Received Telegram message from lead 39: че за кашу ты написал, скинь номрально адрес отеля
+2026-05-30 17:55:45 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 17:55:45 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 17:55:45 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 17:55:54 WARNING django.server "GET /api/communications/unread-counts/ HTTP/1.1" 401 172
+2026-05-30 17:55:54 WARNING django.server "GET /api/organizations/ HTTP/1.1" 401 172
+2026-05-30 17:55:54 WARNING django.server "GET /api/playbooks/ HTTP/1.1" 401 172
+2026-05-30 17:55:54 WARNING django.server "GET /api/hotel-media/ HTTP/1.1" 401 172
+2026-05-30 17:55:54 WARNING django.server "POST /api/auth/refresh/ HTTP/1.1" 401 37
+2026-05-30 17:55:54 WARNING django.server "GET /api/communications/unread-counts/ HTTP/1.1" 401 58
+2026-05-30 17:55:54 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:55:54 INFO apps.leads.ai_service Generated agent response (length: 658)
+2026-05-30 17:55:54 INFO apps.leads.agent_service Processed incoming message for lead 39: 0 actions taken
+2026-05-30 17:55:56 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:01 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:04 INFO django.server "POST /api/auth/login/ HTTP/1.1" 200 834
+2026-05-30 17:56:05 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-30 17:56:05 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-30 17:56:05 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 64
+2026-05-30 17:56:05 INFO django.server "GET /api/leads/source_stats/ HTTP/1.1" 200 33
+2026-05-30 17:56:05 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-30 17:56:05 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10288
+2026-05-30 17:56:06 INFO django.server "GET /api/integrations/whatsapp/status/ HTTP/1.1" 200 134
+2026-05-30 17:56:06 INFO django.server "GET /api/integrations/instagram/status/ HTTP/1.1" 200 495
+2026-05-30 17:56:06 INFO django.server "GET /api/integrations/telegram/status/ HTTP/1.1" 200 150
+2026-05-30 17:56:06 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:08 INFO django.server "POST /api/communications/mark-read/ HTTP/1.1" 200 17
+2026-05-30 17:56:08 INFO django.server "GET /api/lead-activities/?lead=39 HTTP/1.1" 200 23986
+2026-05-30 17:56:08 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 44
+2026-05-30 17:56:10 INFO django.server "GET /api/lead-activities/?lead=40 HTTP/1.1" 200 38684
+2026-05-30 17:56:11 INFO django.server "POST /api/communications/mark-read/ HTTP/1.1" 200 18
+2026-05-30 17:56:11 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 23
+2026-05-30 17:56:11 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10288
+2026-05-30 17:56:12 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:14 INFO django.server "GET /api/lead-activities/?lead=40 HTTP/1.1" 200 38673
+2026-05-30 17:56:16 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 23
+2026-05-30 17:56:16 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10288
+2026-05-30 17:56:17 INFO django.server "GET /api/lead-activities/?lead=40 HTTP/1.1" 200 38673
+2026-05-30 17:56:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:23 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:26 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 23
+2026-05-30 17:56:26 INFO django.server "GET /api/lead-activities/?lead=40 HTTP/1.1" 200 38673
+2026-05-30 17:56:26 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10288
+2026-05-30 17:56:27 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:32 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:35 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:37 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:56:37 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 intent=faq confidence=1.00 booking_step=None
+2026-05-30 17:56:38 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:56:38 INFO apps.leads.agent_dispatcher [CSAgent] response length=128
+2026-05-30 17:56:40 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 17:56:41 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:56:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 17:56:43 INFO apps.leads.telegram_views Sent AI auto-response to lead 39 (2 message(s))
+2026-05-30 17:56:48 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:56:48 INFO apps.leads.agent_service Scheduled proactive follow-up for lead 39 at 2026-05-31 07:56:44.021675+00:00 (20h from now) — Bot asked a qualifying question ('На какие даты планируете приехать?') and is wa
+2026-05-30 17:56:48 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:56:48 INFO apps.leads.telegram_views Updated conversation summary for lead 39: Групповое бронирование на 10 человек, даты и номера уточняют
+2026-05-30 17:56:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:56:49 WARNING apps.leads.ai_service Lead data extraction returned non-object JSON: str
+2026-05-30 17:56:50 INFO apps.leads.telegram_views Received Telegram message from lead 39: а есть гугл карта
+2026-05-30 17:56:50 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 17:56:50 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 17:56:50 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 17:57:02 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:57:02 INFO apps.leads.ai_service Generated agent response (length: 757)
+2026-05-30 17:57:02 INFO apps.leads.agent_service Processed incoming message for lead 39: 1 actions taken
+2026-05-30 17:57:04 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:10 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:10 INFO apps.leads.telegram_views Received Telegram message from lead 39: а отправь мне все плейбуки свои как отправил этот:
+2026-05-30 17:57:10 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 17:57:10 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 17:57:10 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 17:57:14 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:20 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:21 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:57:21 INFO apps.leads.ai_service Generated agent response (length: 552)
+2026-05-30 17:57:23 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:57:23 INFO apps.leads.agent_service Processed incoming message for lead 39: 0 actions taken
+2026-05-30 17:57:25 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:26 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:31 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:32 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:37 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:38 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:42 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:42 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:44 INFO apps.leads.telegram_views Lead 39: skipping response, newer message #1054 will respond to the batch
+2026-05-30 17:57:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:51 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:57:56 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:58:01 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:58:03 INFO apps.leads.telegram_views Lead 39: pooled 2 messages into one response
+2026-05-30 17:58:03 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:58:05 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:58:05 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 intent=off_topic confidence=1.00 booking_step=None
+2026-05-30 17:58:07 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:58:07 INFO apps.leads.agent_dispatcher [CSAgent] response length=340
+2026-05-30 17:58:07 INFO apps.leads.ai_service transfer_to_manager called: reason=corporate_request, recipient=796954658
+2026-05-30 17:58:08 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 17:58:08 INFO apps.leads.ai_service Telegram transfer result: message_id={'message_id': 880, 'chat_id': 796954658, 'text': '📋 New Request\nReason: 🏢 Корпоративный запрос\n\n👤 Guest: Dan12\n📞 Phone: \nInstagram: \nTelegram: @dan12dan_12\n💬 Channel: telegram\n\n🗓 Booking Details:\n  Check-in: \n  Check-out: \n  Nights: \n  Guests: \n  Room: \n  Meal plan: \n  Total: \n\n📝 Notes: CS handoff requested or promised. Guest message: а есть гугл карта\nа отправь мне все пл
+е                                                                                                                                                                                                                                                 е
+йбуки свои как отправил этот:\nПо базе знаний Nomad Camp:\n- Локация и как добраться: Всегда отправляй гостю ссылки на карту 2GIS — не описывай маршрут словами. [{"id":"5cqu9oon7rg","title":"Адрес и навигация","content":"Не описывай маршрут сл
+овами, только ссылки.\\n2GIS: https://go.2gis.com/sm9b6\\nGoogle Maps: https://maps.app.goo.gl/rJeAqoArKKrJ7L2E8\\nЯндекс Карты: https://yandex.com/maps/-/CPaAbBnO"},{"id":"qqxd336lr6a","title":"Как добраться","content":"#', 'date': '2026-05-30T11:58:08+00:00'}
+2026-05-30 17:58:08 INFO apps.leads.ai_service Manager notification sent via telegram to 796954658
+2026-05-30 17:58:08 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 CS sales handoff result={'status': 'success', 'message': 'Менеджер уведомлён', 'notified': 'Zamir'}
+2026-05-30 17:58:09 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 17:58:10 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:58:11 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 17:58:13 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:58:15 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 17:58:15 INFO apps.leads.telegram_views Sent AI auto-response to lead 39 (3 message(s))
+2026-05-30 17:58:16 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:58:16 INFO apps.leads.telegram_views Updated conversation summary for lead 39: Групповое бронирование для 10 человек, даты не указаны, обсу
+2026-05-30 17:58:18 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:58:18 INFO apps.leads.ai_service Extracted lead data: {}
+2026-05-30 17:58:22 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:58:22 INFO apps.leads.agent_service Scheduled proactive follow-up for lead 39 at 2026-05-30 23:58:15.667172+00:00 (12h from now) — Guest is actively engaged, asking questions, and the bot has reiterated the qual
+2026-05-30 17:58:36 INFO apps.leads.telegram_views Received Telegram message from lead 39: числа думаю 5-6
+2026-05-30 17:58:36 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 17:58:36 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 17:58:36 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 17:58:50 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:58:50 INFO apps.leads.ai_service Generated agent response (length: 795)
+2026-05-30 17:58:50 INFO apps.leads.agent_service Processed incoming message for lead 39: 1 actions taken
+2026-05-30 17:58:52 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:58:58 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:04 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:10 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:16 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:22 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:28 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:33 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:37 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 17:59:39 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:59:39 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 intent=booking confidence=1.00 booking_step=None
+2026-05-30 17:59:39 INFO apps.leads.ai_service generate_response called: 'числа думаю 5-6'
+2026-05-30 17:59:39 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-30 17:59:40 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:59:40 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Пожалуйста, уточните месяц и год, на которые вы планируете приехать (5-6 число).
+2026-05-30 17:59:40 INFO apps.leads.ai_service Generated AI response (length: 80)
+2026-05-30 17:59:42 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 17:59:42 INFO apps.leads.telegram_views Sent AI auto-response to lead 39 (1 message(s))
+2026-05-30 17:59:44 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:59:44 INFO apps.leads.telegram_views Updated conversation summary for lead 39: Запрос на сборы для 10 человек, даты 5-6 числа, уточнение ме
+2026-05-30 17:59:45 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:59:45 INFO apps.leads.ai_service Extracted lead data: {}
+2026-05-30 17:59:47 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 17:59:47 INFO apps.leads.agent_service Scheduled proactive follow-up for lead 39 at 2026-05-31 11:59:42.320323+00:00 (24h from now) — Guest is actively engaged and the bot is waiting for clarification on booking da
+2026-05-30 17:59:57 INFO apps.leads.telegram_views Received Telegram message from lead 39: 2026 год в июне
+2026-05-30 17:59:57 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 17:59:57 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 17:59:57 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:00:11 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:00:11 INFO apps.leads.ai_service Generated agent response (length: 669)
+2026-05-30 18:00:11 INFO apps.leads.agent_service Processed incoming message for lead 39: 1 actions taken
+2026-05-30 18:00:13 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:23 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:29 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:35 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:41 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:47 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:53 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:56 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:00:58 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:00:58 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 intent=booking confidence=1.00 booking_step=None
+2026-05-30 18:00:58 INFO apps.leads.ai_service generate_response called: '2026 год в июне'
+2026-05-30 18:00:58 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-30 18:01:00 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-30 18:01:00 WARNING apps.leads.ai_service Tool-call API failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), retrying with tools (backoff) then plain
+2026-05-30 18:01:05 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:01:05 INFO apps.leads.ai_service transfer_to_manager called: reason=sports_camp, recipient=796954658
+2026-05-30 18:01:07 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:01:07 INFO apps.leads.ai_service Telegram transfer result: message_id={'message_id': 887, 'chat_id': 796954658, 'text': '📋 New Request\nReason: 🏊 Спортивный сбор\n\n👤 Guest: \n📞 Phone: \nInstagram: \nTelegram: @dan12dan_12\n 💬 Channel: \n\n🗓 Booking Details:\n  Check-in: 2026-06-05\n  Check-out: 2026-06-06\n  Nights: 1\n  Guests: 10\n  Room: \n  Meal plan: \n  Total: \n\n📝 Notes: Гость хочет узнать наличие номеров на 10 человек для сборов с 5 по 6 июня 2026 год
+а                                                                                                                                                                                                                                                 а.', 'date': '2026-05-30T12:01:07+00:00'}
+2026-05-30 18:01:07 INFO apps.leads.ai_service Manager notification sent via telegram to 796954658
+2026-05-30 18:01:09 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:01:09 INFO apps.leads.ai_service Tool-call retry 1 succeeded after initial API error
+2026-05-30 18:01:09 INFO apps.leads.ai_service Generated AI response (length: 262)
+2026-05-30 18:01:10 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:01:12 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:01:14 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:01:14 INFO apps.leads.telegram_views Sent AI auto-response to lead 39 (2 message(s))
+2026-05-30 18:01:15 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-30 18:01:15 WARNING apps.leads.agent_service _schedule_next_followup failed for lead 39: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-30 18:01:19 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-30 18:01:19 WARNING apps.leads.ai_service Conversation summary generation failed: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-30 18:01:23 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-30 18:01:23 ERROR apps.leads.ai_service Error extracting lead data: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2938, in extract_lead_data
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-30 18:18:38 INFO apps.leads.telegram_views Received Telegram message from lead 39: скинь фото столовой
+2026-05-30 18:18:38 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 18:18:38 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 18:18:38 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:18:52 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:18:52 INFO apps.leads.ai_service Generated agent response (length: 761)
+2026-05-30 18:18:52 INFO apps.leads.agent_service Processed incoming message for lead 39: 0 actions taken
+2026-05-30 18:18:53 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:18:59 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:05 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:10 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:16 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:21 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:27 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:32 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:36 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:39 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:19:39 INFO apps.leads.ai_service AI selected media item 11: Cafe and Restaurant
+2026-05-30 18:19:41 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:19:41 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 intent=faq confidence=0.90 booking_step=None
+2026-05-30 18:19:42 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:19:42 INFO apps.leads.agent_dispatcher [CSAgent] response length=95
+2026-05-30 18:19:44 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:19:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:19:47 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:19:47 INFO apps.leads.telegram_views Sent AI auto-response to lead 39 (2 message(s))
+2026-05-30 18:19:52 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:19:52 INFO apps.leads.agent_service Scheduled proactive follow-up for lead 39 at 2026-05-31 04:19:47.587070+00:00 (16h from now) — Proactive follow-up for an active conversation, waiting for guest response to ph
+2026-05-30 18:19:52 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMediaGroup "HTTP/1.1 200 OK"
+2026-05-30 18:19:52 INFO apps.leads.telegram_views AI sent media item 11 (3 photo(s)) to lead 39
+2026-05-30 18:19:55 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:19:55 INFO apps.leads.telegram_views Updated conversation summary for lead 39: Групповое бронирование для 10 человек на 5-6 июня 2026, ждут
+2026-05-30 18:19:56 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:19:56 INFO apps.leads.ai_service Extracted lead data: {}
+2026-05-30 18:20:12 INFO apps.leads.telegram_views Received Telegram message from lead 39: а питание какое у вас ?
+
+есть меню или как?
+2026-05-30 18:20:12 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 18:20:12 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 18:20:12 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:20:18 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:20:18 INFO apps.leads.ai_service Generated agent response (length: 746)
+2026-05-30 18:20:18 INFO apps.leads.agent_service Processed incoming message for lead 39: 1 actions taken
+2026-05-30 18:20:19 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:20:25 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:20:30 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:20:35 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:20:40 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:20:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:20:51 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:20:57 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:21:00 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:21:01 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:21:01 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 intent=booking confidence=1.00 booking_step=None
+2026-05-30 18:21:01 INFO apps.leads.ai_service Flow: lead 39 advanced to 'Room Selection' (type=normal)
+2026-05-30 18:21:01 INFO apps.leads.ai_service generate_response called: 'а питание какое у вас ?
+
+есть меню или как?'
+2026-05-30 18:21:01 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-30 18:21:04 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:21:04 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: На данный момент у нас комплексное питание в определенное время, и кафе, к сожалению, не работает по заказу. Однако, если Вы захотите дополнительно приобрести завтрак, обед или ужин, Вы можете заранее предупредить ресепшн.
+
+Для групп, как ваша, менеджер обычно заранее уточняет все детали по питанию и возможные аллергии.
+2026-05-30 18:21:04 INFO apps.leads.ai_service Generated AI response (length: 321)
+2026-05-30 18:21:05 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:21:07 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:21:08 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:21:08 INFO apps.leads.telegram_views Sent AI auto-response to lead 39 (2 message(s))
+2026-05-30 18:21:11 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:21:11 INFO apps.leads.telegram_views Updated conversation summary for lead 39: Группа 10 человек на сборы 5-6 июня 2026, обсуждение питания
+2026-05-30 18:21:13 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:21:13 INFO apps.leads.ai_service Extracted lead data: {}
+2026-05-30 18:21:16 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:21:16 INFO apps.leads.agent_service Scheduled proactive follow-up for lead 39 at 2026-05-31 06:21:08.871563+00:00 (18h from now) — Proactive follow-up for an actively engaged lead, allowing time for the manager
+2026-05-30 18:21:54 INFO apps.leads.telegram_views Received Telegram message from lead 39: отлично, напиши мне через 5 минут
+2026-05-30 18:21:54 INFO apps.leads.telegram_views Background AI thread started for lead 39
+2026-05-30 18:21:54 INFO apps.leads.telegram_views Lead 39: background AI thread dispatched
+2026-05-30 18:21:54 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:22:00 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:22:00 INFO apps.leads.ai_service Generated agent response (length: 664)
+2026-05-30 18:22:00 INFO apps.leads.agent_service Guest-requested follow-up scheduled for lead 39: deadline=2026-05-30T12:27:00.867010+00:00
+2026-05-30 18:22:00 INFO apps.leads.agent_service Processed incoming message for lead 39: 2 actions taken
+2026-05-30 18:22:02 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:07 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:13 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:24 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:30 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:35 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:41 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:44 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:22:45 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-30 18:22:45 ERROR apps.leads.agent_dispatcher [IntentRouter] classification failed: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-30 18:22:45 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=39 intent=booking confidence=1.00 booking_step='room_selection'
+2026-05-30 18:22:45 INFO apps.leads.ai_service Flow: lead 39 advanced to 'Meal Plan Selection' (type=normal)
+2026-05-30 18:22:45 INFO apps.leads.ai_service generate_response called: 'отлично, напиши мне через 5 минут'
+2026-05-30 18:22:45 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-30 18:22:47 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:22:47 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Хорошо, я напишу Вам через 5 минут! 😊
+2026-05-30 18:22:47 INFO apps.leads.ai_service Generated AI response (length: 37)
+2026-05-30 18:22:48 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:22:48 INFO apps.leads.telegram_views Sent AI auto-response to lead 39 (1 message(s))
+2026-05-30 18:22:51 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:22:51 INFO apps.leads.telegram_views Updated conversation summary for lead 39: Группа 10 человек интересуется сборами 5-6 июня 2026, обсужд
+2026-05-30 18:22:52 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:22:52 WARNING apps.leads.ai_service Lead data extraction returned non-object JSON: str
+2026-05-30 18:22:52 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:22:52 INFO apps.leads.agent_service AI scheduled exact follow-up for lead 39 at 2026-05-30 12:27:00+00:00 (local: 2026-05-30 18:27:00+06:00)
+2026-05-30 18:36:39 INFO apps.leads.telegram_views Received Telegram message from lead 40: В 18:40 напиши мне
+2026-05-30 18:36:39 INFO apps.leads.telegram_views Background AI thread started for lead 40
+2026-05-30 18:36:39 INFO apps.leads.telegram_views Lead 40: background AI thread dispatched
+2026-05-30 18:36:39 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:36:51 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:36:51 INFO apps.leads.ai_service Generated agent response (length: 699)
+2026-05-30 18:36:53 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:36:53 INFO apps.leads.agent_service Guest-requested follow-up scheduled for lead 40: deadline=2026-05-30T18:40:00
+2026-05-30 18:36:53 INFO apps.leads.agent_service Processed incoming message for lead 40: 1 actions taken
+2026-05-30 18:36:55 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:00 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:06 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:12 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:24 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:30 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:36 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:40 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:37:41 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:37:41 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=40 intent=off_topic confidence=1.00 booking_step=None
+2026-05-30 18:37:42 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:37:42 INFO apps.leads.agent_dispatcher [CSAgent] response length=49
+2026-05-30 18:37:44 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:37:44 INFO apps.leads.telegram_views Sent AI auto-response to lead 40 (1 message(s))
+2026-05-30 18:37:47 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:37:47 INFO apps.leads.agent_service AI scheduled exact follow-up for lead 40 at 2026-05-30 12:40:00+00:00 (local: 2026-05-30 18:40:00+06:00)
+2026-05-30 18:37:47 INFO apps.leads.agent_service Keeping earlier follow-up for lead 40 at 2026-05-30 12:40:00+00:00; new candidate was 2026-05-30 12:40:00+00:00
+2026-05-30 18:37:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:37:49 INFO apps.leads.telegram_views Updated conversation summary for lead 40: Ищут номер на 1-7 июня для 2 взрослых и 1 ребенка, ждут возр
+2026-05-30 18:37:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:37:49 WARNING apps.leads.ai_service Lead data extraction returned non-object JSON: str
+2026-05-30 18:41:29 INFO apps.leads.telegram_views Received Telegram message from lead 40: Красавчик
+2026-05-30 18:41:29 INFO apps.leads.telegram_views Background AI thread started for lead 40
+2026-05-30 18:41:29 INFO apps.leads.telegram_views Lead 40: background AI thread dispatched
+2026-05-30 18:41:29 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:41:32 INFO apps.leads.telegram_views Received Telegram message from lead 40: Хорлшо работаешь
+2026-05-30 18:41:32 INFO apps.leads.telegram_views Background AI thread started for lead 40
+2026-05-30 18:41:32 INFO apps.leads.telegram_views Lead 40: background AI thread dispatched
+2026-05-30 18:41:32 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:41:34 INFO apps.leads.telegram_views Received Telegram message from lead 40: Как тебя зовут
+2026-05-30 18:41:34 INFO apps.leads.telegram_views Background AI thread started for lead 40
+2026-05-30 18:41:34 INFO apps.leads.telegram_views Lead 40: background AI thread dispatched
+2026-05-30 18:41:34 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-30 18:41:37 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:41:37 INFO apps.leads.ai_service Generated agent response (length: 624)
+2026-05-30 18:41:37 INFO apps.leads.agent_service Processed incoming message for lead 40: 0 actions taken
+2026-05-30 18:41:38 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:39 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:41:39 INFO apps.leads.ai_service Generated agent response (length: 670)
+2026-05-30 18:41:39 INFO apps.leads.agent_service Processed incoming message for lead 40: 0 actions taken
+2026-05-30 18:41:40 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:41 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:41:41 INFO apps.leads.ai_service Generated agent response (length: 787)
+2026-05-30 18:41:41 INFO apps.leads.agent_service Processed incoming message for lead 40: 0 actions taken
+2026-05-30 18:41:42 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:44 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:47 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:48 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:49 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:52 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:52 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-30 18:41:54 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+
+
+
+
+2026-05-30 18:18:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.8h ago)
+2026-05-30 18:18:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:19:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.2h ago)
+2026-05-30 18:19:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Recent follow-up (0.7h ago)
+2026-05-30 18:19:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.8h ago)
+2026-05-30 18:19:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.8h ago)
+2026-05-30 18:19:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:20:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.3h ago)
+2026-05-30 18:20:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Recent follow-up (0.7h ago)
+2026-05-30 18:20:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.8h ago)
+2026-05-30 18:20:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.8h ago)
+2026-05-30 18:20:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:21:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.3h ago)
+2026-05-30 18:21:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Scheduled for 2026-05-31 06:21
+2026-05-30 18:21:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.8h ago)
+2026-05-30 18:21:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.8h ago)
+2026-05-30 18:21:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:22:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.3h ago)
+2026-05-30 18:22:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Scheduled for 2026-05-30 12:27
+2026-05-30 18:22:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.8h ago)
+2026-05-30 18:22:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.8h ago)
+2026-05-30 18:22:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:23:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.3h ago)
+2026-05-30 18:23:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Scheduled for 2026-05-30 12:27
+2026-05-30 18:23:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.9h ago)
+2026-05-30 18:23:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.9h ago)
+2026-05-30 18:23:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:24:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.3h ago)
+2026-05-30 18:24:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Scheduled for 2026-05-30 12:27
+2026-05-30 18:24:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.9h ago)
+2026-05-30 18:24:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.9h ago)
+2026-05-30 18:24:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:25:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.3h ago)
+2026-05-30 18:25:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Scheduled for 2026-05-30 12:27
+2026-05-30 18:25:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.9h ago)
+2026-05-30 18:25:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.9h ago)
+2026-05-30 18:25:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:26:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.4h ago)
+2026-05-30 18:26:26 INFO apps.leads.agent_service Skipping lead 39 (Dan12): Scheduled for 2026-05-30 12:27
+2026-05-30 18:26:26 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.9h ago)
+2026-05-30 18:26:26 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.9h ago)
+2026-05-30 18:26:26 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 0, 'skipped': 4, 'errors': 0}
+2026-05-30 18:27:26 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.4h ago)
+2026-05-30 18:27:29 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:27:29 INFO apps.leads.ai_service Generated agent response (length: 312)
+2026-05-30 18:27:31 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:27:31 INFO apps.leads.agent_service Sent AI follow-up to lead 39 via telegram (attempt 2)
+2026-05-30 18:27:42 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:27:42 INFO apps.leads.ai_service Generated agent response (length: 423)
+2026-05-30 18:27:42 INFO apps.leads.agent_service AI created task for lead 39: Message Dan12: Follow up on food options and next steps (due: 2026-05-31)
+2026-05-30 18:27:42 INFO apps.leads.agent_service AI created 1 task(s) for lead 39
+2026-05-30 18:27:42 INFO apps.leads.agent_service Auto-task execution: 0 executed, 0 failed
+2026-05-30 18:27:42 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.9h ago)
+2026-05-30 18:27:42 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.9h ago)
+2026-05-30 18:27:42 INFO apps.leads.agent_service Agent check complete: {'processed': 4, 'messaged': 1, 'skipped': 3, 'errors': 0}
+2026-05-30 18:27:42 INFO agent_loop Agent check done: {'processed': 4, 'messaged': 1, 'skipped': 3, 'errors': 0}
+2026-05-30 18:28:42 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.4h ago)
+2026-05-30 18:28:42 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (3.9h ago)
+2026-05-30 18:28:42 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (3.9h ago)
+2026-05-30 18:28:42 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:29:42 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.4h ago)
+2026-05-30 18:29:42 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.0h ago)
+2026-05-30 18:29:42 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.0h ago)
+2026-05-30 18:29:42 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:30:42 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.4h ago)
+2026-05-30 18:30:42 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.0h ago)
+2026-05-30 18:30:42 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.0h ago)
+2026-05-30 18:30:42 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:31:42 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.4h ago)
+2026-05-30 18:31:42 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.0h ago)
+2026-05-30 18:31:42 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.0h ago)
+2026-05-30 18:31:42 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:32:42 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.5h ago)
+2026-05-30 18:32:42 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.0h ago)
+2026-05-30 18:32:42 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.0h ago)
+2026-05-30 18:32:42 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:33:42 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.5h ago)
+2026-05-30 18:33:42 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.0h ago)
+2026-05-30 18:33:43 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.0h ago)
+2026-05-30 18:33:43 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:34:43 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.5h ago)
+2026-05-30 18:34:43 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.0h ago)
+2026-05-30 18:34:43 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.0h ago)
+2026-05-30 18:34:43 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:35:43 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.5h ago)
+2026-05-30 18:35:43 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.1h ago)
+2026-05-30 18:35:43 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.1h ago)
+2026-05-30 18:35:43 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:36:43 INFO apps.leads.agent_service Skipping lead 40 (Dan): Recent follow-up (0.5h ago)
+2026-05-30 18:36:43 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.1h ago)
+2026-05-30 18:36:43 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.1h ago)
+2026-05-30 18:36:43 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:37:43 INFO apps.leads.agent_service Skipping lead 40 (Dan): Scheduled for 2026-05-30 12:40
+2026-05-30 18:37:43 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.1h ago)
+2026-05-30 18:37:43 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.1h ago)
+2026-05-30 18:37:43 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:38:43 INFO apps.leads.agent_service Skipping lead 40 (Dan): Scheduled for 2026-05-30 12:40
+2026-05-30 18:38:43 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.1h ago)
+2026-05-30 18:38:43 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.1h ago)
+2026-05-30 18:38:43 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:39:43 INFO apps.leads.agent_service Skipping lead 40 (Dan): Scheduled for 2026-05-30 12:40
+2026-05-30 18:39:43 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.1h ago)
+2026-05-30 18:39:43 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.1h ago)
+2026-05-30 18:39:43 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 0, 'skipped': 3, 'errors': 0}
+2026-05-30 18:40:45 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:40:45 INFO apps.leads.ai_service Generated agent response (length: 195)
+2026-05-30 18:40:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-30 18:40:46 INFO apps.leads.agent_service Sent AI follow-up to lead 40 via telegram (attempt 2)
+2026-05-30 18:40:50 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-30 18:40:50 INFO apps.leads.ai_service Generated agent response (length: 314)
+2026-05-30 18:40:50 INFO apps.leads.agent_service AI created task for lead 40: Follow up with Dan at 18:40 today as requested (due: 2026-05-31)
+2026-05-30 18:40:50 INFO apps.leads.agent_service AI created 1 task(s) for lead 40
+2026-05-30 18:40:50 INFO apps.leads.agent_service Auto-task execution: 0 executed, 0 failed
+2026-05-30 18:40:50 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.1h ago)
+2026-05-30 18:40:50 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.1h ago)
+2026-05-30 18:40:50 INFO apps.leads.agent_service Agent check complete: {'processed': 3, 'messaged': 1, 'skipped': 2, 'errors': 0}
+2026-05-30 18:40:50 INFO agent_loop Agent check done: {'processed': 3, 'messaged': 1, 'skipped': 2, 'errors': 0}
+2026-05-30 18:41:50 INFO apps.leads.agent_service Skipping lead 18 (Dan Da): Recent follow-up (4.2h ago)
+2026-05-30 18:41:50 INFO apps.leads.agent_service Skipping lead 17 (Адреев Андрей Андреевич): Recent follow-up (4.2h ago)
+2026-05-30 18:41:50 INFO apps.leads.agent_service Agent check complete: {'processed': 2, 'messaged': 0, 'skipped': 2, 'errors': 0}

@@ -1,0 +1,143 @@
+→ [Отправить] "Расскажите про отель, что у вас есть"
+✅ Бот отвечает из [HOTEL INFO] и потом спрашивает про даты
+❌ БАГ: "у меня нет информации об отеле"
+
+→ [Отправить] "Сколько метров до пляжа?"
+✅ Бот: "~200 метров, пляж общественный" (если плейбук активен)
+   ИЛИ "уточните у менеджера" (если плейбук не в DB)
+❌ БАГ: уверенно называет неправильную цифру
+
+
+Dan12, [29.05.2026 0:27]
+Расскажите про отель, что у вас есть
+
+axon_nomadsdasdasdas, [29.05.2026 0:28]
+Добро пожаловать в Nomad Camp! 🌿 У нас есть уникальный крытый бассейн 25 метров, единственный на южном берегу, и мы работаем круглый год. Рядом с нами живописный каньон Марс (всего в 7 минутах) и горячие источники.
+
+axon_nomadsdasdasdas, [29.05.2026 0:28]
+На какие даты планируете приехать? 😊
+
+Dan12, [29.05.2026 0:28]
+Сколько метров до пляжа?
+
+axon_nomadsdasdasdas, [29.05.2026 0:29]
+Я с радостью передам Ваш вопрос менеджеру, чтобы он смог предоставить Вам точную информацию! 🙏
+
+
+
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Установите последнюю версию PowerShell для новых функций и улучшения! https://aka.ms/PSWindows
+
+(.venv) PS C:\Users\User\PycharmProjects\cayu\nomw-my_changes> cd .\backend\
+(.venv) PS C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend> python manage.py runserver
+2026-05-29 00:27:46 INFO django.utils.autoreload Watching for file changes with StatReloader
+2026-05-29 00:27:46 INFO apps.leads.ai_service AI service: using Gemini (gemini-2.5-flash) via OpenAI-compatible API
+2026-05-29 00:27:47 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 23
+2026-05-29 00:27:47 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-29 00:27:47 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-29 00:27:47 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-29 00:27:47 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-29 00:27:47 INFO django.server "GET /api/leads/ HTTP/1.1" 200 8415
+2026-05-29 00:27:49 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:27:49 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 23
+2026-05-29 00:27:49 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-29 00:27:49 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-29 00:27:49 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:27:49 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-29 00:27:49 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-29 00:27:49 INFO django.server "GET /api/leads/ HTTP/1.1" 200 8415
+2026-05-29 00:27:56 INFO apps.leads.telegram_views Auto-created lead 24 from Telegram chat_id: 7017588699
+2026-05-29 00:27:56 INFO apps.leads.telegram_views Received Telegram message from lead 24: Расскажите про отель, что у вас есть
+2026-05-29 00:27:56 INFO apps.leads.telegram_views Background AI thread started for lead 24
+2026-05-29 00:27:56 INFO apps.leads.telegram_views Lead 24: background AI thread dispatched
+2026-05-29 00:27:56 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-29 00:28:02 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:28:02 INFO apps.leads.ai_service Generated agent response (length: 670)
+2026-05-29 00:28:02 INFO apps.leads.conversation_analyzer AI progressed lead 24 from new to contacted: The lead is actively requesting information about the hotel, indicating initial engagement and moving beyond the 'new' stage.
+2026-05-29 00:28:02 INFO apps.leads.goal_manager Created goal 'collect_email' for lead 24
+2026-05-29 00:28:02 INFO apps.leads.goal_manager Created goal 'collect_phone' for lead 24
+2026-05-29 00:28:02 INFO apps.leads.goal_manager Created goal 'qualify_lead' for lead 24
+2026-05-29 00:28:02 INFO apps.leads.goal_manager Created goal 'schedule_call' for lead 24
+2026-05-29 00:28:02 INFO apps.leads.agent_service Processed incoming message for lead 24: 1 actions taken
+2026-05-29 00:28:03 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:08 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:13 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:23 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:29 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:33 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:39 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:42 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:43 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:28:43 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=24 intent=faq confidence=1.00 booking_step=None
+2026-05-29 00:28:45 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:28:45 INFO apps.leads.agent_dispatcher [CSAgent] response length=252
+2026-05-29 00:28:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:28:47 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:28:47 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:28:47 INFO apps.leads.telegram_views Sent AI auto-response to lead 24 (2 message(s))
+2026-05-29 00:28:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:28:49 INFO apps.leads.telegram_views Updated conversation summary for lead 24: Гость интересуется общими сведениями об отеле и его удобства
+2026-05-29 00:28:51 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:28:51 INFO apps.leads.ai_service Extracted lead data: {}
+2026-05-29 00:28:59 INFO apps.leads.telegram_views Received Telegram message from lead 24: Сколько метров до пляжа?
+2026-05-29 00:28:59 INFO apps.leads.telegram_views Background AI thread started for lead 24
+2026-05-29 00:28:59 INFO apps.leads.telegram_views Lead 24: background AI thread dispatched
+2026-05-29 00:28:59 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-29 00:29:09 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:29:09 INFO apps.leads.ai_service Generated agent response (length: 638)
+2026-05-29 00:29:09 INFO apps.leads.conversation_analyzer AI progressed lead 24 from contacted to nurturing: Lead is actively asking for more details about the product, showing continued interest within the 'contacted' stage, but has not yet reached a stage of qualification or booking confirmation.
+2026-05-29 00:29:09 INFO apps.leads.agent_service Processed incoming message for lead 24: 1 actions taken
+2026-05-29 00:29:09 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:14 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:19 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:24 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:28 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:33 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:39 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:45 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:49 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:29:50 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:29:50 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=24 intent=faq confidence=1.00 booking_step=None
+2026-05-29 00:29:51 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-29 00:29:51 ERROR apps.leads.agent_dispatcher [CSAgent] generation failed: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\agent_dispatcher.py", line 265, in run_cs_agent
+    resp = client.chat.completions.create(
+        model=model,
+    ...<3 lines>...
+        timeout=30,
+    )
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-29 00:29:51 WARNING apps.leads.agent_dispatcher [AgentDispatcher] lead=24 agent returned None, falling back to Booking Agent
+2026-05-29 00:29:51 INFO apps.leads.ai_service Flow: starting lead 24 at entry card 'Welcome & Greeting'
+2026-05-29 00:29:51 INFO apps.leads.ai_service generate_response called: 'Сколько метров до пляжа?'
+2026-05-29 00:29:51 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-29 00:29:53 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:29:53 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Я с радостью передам Ваш вопрос менеджеру, чтобы он смог предоставить Вам точную информацию! 🙏
+2026-05-29 00:29:53 INFO apps.leads.ai_service Generated AI response (length: 94)
+2026-05-29 00:29:54 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:29:54 INFO apps.leads.telegram_views Sent AI auto-response to lead 24 (1 message(s))
+2026-05-29 00:29:55 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-29 00:29:55 WARNING apps.leads.ai_service Conversation summary generation failed: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-29 00:29:56 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:29:56 INFO apps.leads.ai_service Extracted lead data: {}

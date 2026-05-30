@@ -1,0 +1,337 @@
+→ Сначала пройди шаги 1-3 (даты, гости, номер)
+→ [Отправить] "Напишите мне завтра, я подумаю"
+✅ Бот: "Хорошо, напишу Вам завтра! Если есть конкретное время — скажите 🙏"
+❌ БАГ: "К сожалению, у меня нет функции написать завтра"
+
+→ [Отправить] "Напомните в пятницу вечером"
+✅ Бот обещает конкретное время
+✅ В Django admin → Lead → next_follow_up_at должна стоять дата (Friday ~19:00)
+
+
+
+так и не написал
+
+Dan12, [29.05.2026 0:05]
+Привет, нас 2, с 15 по 18 июня
+
+axon_nomadsdasdasdas, [29.05.2026 0:06]
+Прекрасно! На эти даты для двоих гостей мы можем предложить:
+
+axon_nomadsdasdasdas, [29.05.2026 0:06]
+*   Стандарт двухместный за 5800 KGS в сутки.
+*   Комфорт двухместный за 9500 KGS в сутки.
+
+axon_nomadsdasdasdas, [29.05.2026 0:06]
+Также есть семейный номер за 5800 KGS в сутки.
+
+axon_nomadsdasdasdas, [29.05.2026 0:06]
+Какой вариант вам больше подходит? 😊
+
+Dan12, [29.05.2026 0:06]
+давайте комфорт, с завтраком можно?
+
+axon_nomadsdasdasdas, [29.05.2026 0:07]
+Отличный выбор! Номер "комфорт двухместный" с завтраком будет стоить 10900 KGS в сутки.
+
+axon_nomadsdasdasdas, [29.05.2026 0:07]
+Также доступны следующие планы питания:
+*   Полупансион (завтрак + ужин) за 12500 KGS в сутки.
+*   Полный пансион (завтрак + обед + ужин) за 14100 KGS в сутки.
+
+axon_nomadsdasdasdas, [29.05.2026 0:07]
+Какой план питания вам больше подходит?
+
+Dan12, [29.05.2026 0:07]
+только завтрак
+
+axon_nomadsdasdasdas, [29.05.2026 0:08]
+Отлично, комфорт двухместный с завтраком на даты с 15 по 18 июня. Общая стоимость за 3 ночи составит 32700 сомов.
+
+axon_nomadsdasdasdas, [29.05.2026 0:09]
+Могу зарезервировать этот номер для Вас. Для этого мне понадобятся Ваши имя и контактный телефон. 🙏
+
+Dan12, [29.05.2026 0:09]
+Можете через 2 минуты написать пожалуйста, я пока думаю
+
+axon_nomadsdasdasdas, [29.05.2026 0:10]
+Хорошо, я напишу вам через 2 минуты 🙏
+
+
+
+2026-05-29 00:05:28 INFO django.server "GET /api/leads/ HTTP/1.1" 200 8415
+2026-05-29 00:05:33 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 23
+2026-05-29 00:05:33 INFO django.server "GET /api/leads/ HTTP/1.1" 200 8415
+2026-05-29 00:05:34 INFO apps.leads.telegram_views Auto-created lead 22 from Telegram chat_id: 7017588699
+2026-05-29 00:05:34 INFO apps.leads.telegram_views Received Telegram message from lead 22: Привет, нас 2, с 15 по 18 июня
+2026-05-29 00:05:34 INFO apps.leads.telegram_views Background AI thread started for lead 22
+2026-05-29 00:05:34 INFO apps.leads.telegram_views Lead 22: background AI thread dispatched
+2026-05-29 00:05:34 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-29 00:05:35 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-29 00:05:35 ERROR apps.leads.ai_service Error generating agent response: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\backend\apps\leads\ai_service.py", line 2075, in generate_response_with_messages
+    response = self.client.chat.completions.create(**kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\cayu\nomw-my_changes\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-29 00:05:35 INFO apps.leads.conversation_analyzer AI progressed lead 22 from new to contacted: Inbound message received
+2026-05-29 00:05:35 INFO apps.leads.goal_manager Created goal 'collect_email' for lead 22
+2026-05-29 00:05:35 INFO apps.leads.goal_manager Created goal 'collect_phone' for lead 22
+2026-05-29 00:05:35 INFO apps.leads.goal_manager Created goal 'qualify_lead' for lead 22
+2026-05-29 00:05:35 INFO apps.leads.goal_manager Created goal 'schedule_call' for lead 22
+2026-05-29 00:05:35 INFO apps.leads.agent_service Processed incoming message for lead 22: 1 actions taken
+2026-05-29 00:05:37 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:05:38 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 42
+2026-05-29 00:05:39 INFO django.server "GET /api/leads/ HTTP/1.1" 200 9872
+2026-05-29 00:05:42 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:05:47 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:05:52 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:05:57 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:02 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:08 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:12 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:16 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:17 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:06:17 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=22 intent=booking confidence=1.00 booking_step=None
+2026-05-29 00:06:17 INFO apps.leads.ai_service Flow: starting lead 22 at entry card 'Welcome & Greeting'
+2026-05-29 00:06:17 INFO apps.leads.ai_service generate_response called: 'Привет, нас 2, с 15 по 18 июня'
+2026-05-29 00:06:17 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-29 00:06:19 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:06:19 INFO apps.leads.ai_service [AI RESPONSE DEBUG] AI called tool=get_room_options with args={"checkout_date": "2026-06-18", "guest_count": 2, "checkin_date": "2026-06-15"}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] INPUT: guest_count=2, checkin_date=2026-06-15, checkout_date=2026-06-18, total_nights=3
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] group found: 3 combinations
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 21600}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 26400}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 31200}}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] raw prices dict={'standard': 9500, 'with_breakfast': 10900, 'half_board': 12500, 'full_board': 14100}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 10900, 'label': 'С завтраком', 'total': 32700}, 'half_board': {'per_night': 12500, 'label': 'Полупансион (завтрак + ужин)', 'total': 37500}, 'full_board': {'per_night': 14100, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 42300}}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 21600}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 26400}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 31200}}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options] returning 2 standard combinations to AI
+2026-05-29 00:06:19 INFO apps.leads.ai_service [get_room_options DEBUG] FINAL RESPONSE JSON: {"guest_count": 2, "combinations": [{"description": "стандарт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800,
+ "meal_plans": {"with_breakfast": {"per_night": 7200, "label": "С завтраком", "total": 21600}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 26400}, "full_board": {"per_night": 10400, "label": "Полный панс
+ион (завтрак + обед + ужин)", "total": 31200}}, "note": "", "room_type_key": "стандарт двухместный", "standard_price_total": 17400}, {"description": "комфорт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 95
+00, "meal_plans": {"with_breakfast": {"per_night": 10900, "label": "С завтраком", "total": 32700}, "half_board": {"per_night": 12500, "label": "Полупансион (завтрак + ужин)", "total": 37500}, "full_board": {"per_night": 14100, "label": "Полный
+ пансион (завтрак + обед + ужин)", "total": 42300}}, "note": "", "room_type_key": "комфорт двухместный", "standard_price_total": 28500}], "_note": "All prices pre-calculated — AI must NOT perform any arithmetic. meal_plans.per_night is the COM
+BINED total for all rooms in this combination — quote it directly, never say \"per room\". Reveal meal_plans ONLY after the guest picks a room. CRITICAL: Use ONLY the prices in this tool response. NEVER use prices from example conversations, c
+onversation history, or memory — those are outdated and incorrect. For multi-room combinations (is_multi_room=true), mention that rooms will be adjacent if possible. If family_alternatives is non-empty, explicitly mention that a family option
+is also available and show its standard per-night price.", "family_alternatives": [{"description": "семейный один номер", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800, "meal_plans": {"with_breakfast": {"per_night":
+ 7200, "label": "С завтраком", "total": 21600}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 26400}, "full_board": {"per_night": 10400, "label": "Полный пансион (завтрак + обед + ужин)", "total": 31200}}, "note": "", "room_type_key": "семейный один номер", "standard_price_total": 17400}], "checkin_date": "2026-06-15", "checkout_date": "2026-06-18", "total_nights": 3}
+2026-05-29 00:06:19 INFO apps.leads.ai_service [AI RESPONSE DEBUG] tool=get_room_options result sent to AI: {"guest_count": 2, "combinations": [{"description": "стандарт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_pe
+r_night": 5800, "meal_plans": {"with_breakfast": {"per_night": 7200, "label": "С завтраком", "total": 21600}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 26400}, "full_board": {"per_night": 10400, "label
+": "Полный пансион (завтрак + обед + ужин)", "total": 31200}}, "note": "", "room_type_key": "стандарт двухместный", "standard_price_total": 17400}, {"description": "комфорт двухместный", "room_count": 1, "is_multi_room": false, "standard_price
+_per_night": 9500, "meal_plans": {"with_breakfast": {"per_night": 10900, "label": "С завтраком", "total": 32700}, "half_board": {"per_night": 12500, "label": "Полупансион (завтрак + ужин)", "total": 37500}, "full_board": {"per_night": 14100, "
+label": "Полный пансион (завтрак + обед + ужин)", "total": 42300}}, "note": "", "room_type_key": "комфорт двухместный", "standard_price_total": 28500}], "_note": "All prices pre-calculated — AI must NOT perform any arithmetic. meal_plans.per_n
+ight is the COMBINED total for all rooms in this combination — quote it directly, never say \"per room\". Reveal meal_plans ONLY after the guest picks a room. CRITICAL: Use ONLY the prices in this tool response. NEVER use prices from example c
+onversations, conversation history, or memory — those are outdated and incorrect. For multi-room combinations (is_multi_room=true), mention that rooms will be adjacent if possible. If family_alternatives is non-empty, explicitly mention that a
+ family option is also available and show its standard per-night price.", "family_alternatives": [{"description": "семейный один номер", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800, "meal_plans": {"with_breakfast"
+: {"per_night": 7200, "label": "С завтраком", "total": 21600}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 26400}, "full_board": {"per_night": 10400, "label": "Полный пансион (завтрак + обед + ужин)", "total": 31200}}, "note": "", "room_type_key": "семейный один номер", "standard_price_total": 17400}], "checkin_date": "2026-06-15", "checkout_date": "2026-06-18", "total_nights": 3}
+2026-05-29 00:06:21 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:06:21 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Прекрасно! На эти даты для двоих гостей мы можем предложить:
+
+*   **Стандарт двухместный** за 5800 KGS в сутки.
+*   **Комфорт двухместный** за 9500 KGS в сутки.
+
+Также есть **семейный номер** за 5800 KGS в сутки.
+
+Какой вариант вам больше подходит? 😊
+2026-05-29 00:06:21 INFO apps.leads.ai_service Generated AI response (length: 250)
+2026-05-29 00:06:22 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:06:24 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:25 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:06:27 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:28 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:06:30 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:31 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:06:31 INFO apps.leads.telegram_views Sent AI auto-response to lead 22 (4 message(s))
+2026-05-29 00:06:34 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:06:34 INFO apps.leads.telegram_views Updated conversation summary for lead 22: Двое гостей ищут номер с 15 по 18 июня, агент предложил вари
+2026-05-29 00:06:35 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:06:35 INFO apps.leads.ai_service Extracted lead data: {'problem_description': 'нас 2, с 15 по 18 июня', 'check_in_date': '2026-06-15', 'check_out_date': '2026-06-18', 'guest_count': 2}
+2026-05-29 00:06:35 INFO apps.leads.telegram_views Auto-extracted and updated fields for lead 22: ['problem_description', 'check_in_date', 'check_out_date', 'guest_count']
+2026-05-29 00:06:37 INFO apps.leads.telegram_views Received Telegram message from lead 22: давайте комфорт, с завтраком можно?
+2026-05-29 00:06:37 INFO apps.leads.telegram_views Background AI thread started for lead 22
+2026-05-29 00:06:37 INFO apps.leads.telegram_views Lead 22: background AI thread dispatched
+2026-05-29 00:06:37 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-29 00:06:47 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:06:47 INFO apps.leads.ai_service Generated agent response (length: 704)
+2026-05-29 00:06:47 INFO apps.leads.goal_manager Completed goal 'qualify_lead' for lead 22
+2026-05-29 00:06:47 INFO apps.leads.conversation_analyzer AI progressed lead 22 from contacted to nurturing: Lead has expressed a clear preference for a room type and asked about an add-on, indicating high interest and qualification, but has not yet explicitly confirmed a booking to move to 'won'. No other intermediate stages are available.
+2026-05-29 00:06:48 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-29 00:06:48 WARNING apps.leads.agent_service Promise extraction failed for lead 22: Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]
+2026-05-29 00:06:48 INFO apps.leads.agent_service Processed incoming message for lead 22: 2 actions taken
+2026-05-29 00:06:50 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:06:56 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:02 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:08 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:13 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:19 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:25 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:31 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:35 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:37 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:07:37 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=22 intent=booking confidence=1.00 booking_step=None
+2026-05-29 00:07:37 INFO apps.leads.ai_service Flow: lead 22 advanced to 'Room Selection' (type=normal)
+2026-05-29 00:07:37 INFO apps.leads.ai_service generate_response called: 'давайте комфорт, с завтраком можно?'
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] INPUT: guest_count=2, checkin_date=2026-06-15, checkout_date=2026-06-18, total_nights=3
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] group found: 3 combinations
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['стандарт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 21600}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 26400}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 31200}}
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] raw prices dict={'standard': 9500, 'with_breakfast': 10900, 'half_board': 12500, 'full_board': 14100}
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['комфорт двухместный'] meal_plans after primary build={'with_breakfast': {'per_night': 10900, 'label': 'С завтраком', 'total': 32700}, 'half_board': {'per_night': 12500, 'label': 'Полупансион (завтрак + ужин)', 'total': 37500}, 'full_board': {'per_night': 14100, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 42300}}
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] raw prices dict={'standard': 5800, 'with_breakfast': 7200, 'half_board': 8800, 'full_board': 10400}
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] combo rooms=['семейный один номер'] meal_plans after primary build={'with_breakfast': {'per_night': 7200, 'label': 'С завтраком', 'total': 21600}, 'half_board': {'per_night': 8800, 'label': 'Полупансион (завтрак + ужин)', 'total': 26400}, 'full_board': {'per_night': 10400, 'label': 'Полный пансион (завтрак + обед + ужин)', 'total': 31200}}
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options] returning 2 standard combinations to AI
+2026-05-29 00:07:37 INFO apps.leads.ai_service [get_room_options DEBUG] FINAL RESPONSE JSON: {"guest_count": 2, "combinations": [{"description": "стандарт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800,
+ "meal_plans": {"with_breakfast": {"per_night": 7200, "label": "С завтраком", "total": 21600}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 26400}, "full_board": {"per_night": 10400, "label": "Полный панс
+ион (завтрак + обед + ужин)", "total": 31200}}, "note": "", "room_type_key": "стандарт двухместный", "standard_price_total": 17400}, {"description": "комфорт двухместный", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 95
+00, "meal_plans": {"with_breakfast": {"per_night": 10900, "label": "С завтраком", "total": 32700}, "half_board": {"per_night": 12500, "label": "Полупансион (завтрак + ужин)", "total": 37500}, "full_board": {"per_night": 14100, "label": "Полный
+ пансион (завтрак + обед + ужин)", "total": 42300}}, "note": "", "room_type_key": "комфорт двухместный", "standard_price_total": 28500}], "_note": "All prices pre-calculated — AI must NOT perform any arithmetic. meal_plans.per_night is the COM
+BINED total for all rooms in this combination — quote it directly, never say \"per room\". Reveal meal_plans ONLY after the guest picks a room. CRITICAL: Use ONLY the prices in this tool response. NEVER use prices from example conversations, c
+onversation history, or memory — those are outdated and incorrect. For multi-room combinations (is_multi_room=true), mention that rooms will be adjacent if possible. If family_alternatives is non-empty, explicitly mention that a family option
+is also available and show its standard per-night price.", "family_alternatives": [{"description": "семейный один номер", "room_count": 1, "is_multi_room": false, "standard_price_per_night": 5800, "meal_plans": {"with_breakfast": {"per_night":
+ 7200, "label": "С завтраком", "total": 21600}, "half_board": {"per_night": 8800, "label": "Полупансион (завтрак + ужин)", "total": 26400}, "full_board": {"per_night": 10400, "label": "Полный пансион (завтрак + обед + ужин)", "total": 31200}}, "note": "", "room_type_key": "семейный один номер", "standard_price_total": 17400}], "checkin_date": "2026-06-15", "checkout_date": "2026-06-18", "total_nights": 3}
+2026-05-29 00:07:37 INFO apps.leads.ai_service [Prefetch] Pre-fetched get_room_options for meal plan accuracy
+2026-05-29 00:07:37 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-29 00:07:38 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+2026-05-29 00:07:38 WARNING apps.leads.ai_service Tool-call API failed (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]), retrying with tools (backoff) then plain
+2026-05-29 00:07:42 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:07:42 INFO apps.leads.ai_service Tool-call retry 1 succeeded after initial API error
+2026-05-29 00:07:42 INFO apps.leads.ai_service Generated AI response (length: 289)
+2026-05-29 00:07:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:07:44 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:44 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:07:45 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:07:46 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:07:46 INFO apps.leads.telegram_views Sent AI auto-response to lead 22 (3 message(s))
+2026-05-29 00:07:47 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:07:47 INFO apps.leads.telegram_views Updated conversation summary for lead 22: Гость подтверждает комфорт двухместный с 15-18 июня для двои
+2026-05-29 00:07:49 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:07:49 INFO apps.leads.ai_service Extracted lead data: {'guest_count': 2, 'check_in_date': '2026-06-15', 'check_out_date': '2026-06-18', 'room_type_preference': 'Комфорт двухместный', 'meal_plan': 'breakfast', 'problem_description': 'Хочет забронировать номер Комфорт с завтраком'}
+2026-05-29 00:07:49 INFO apps.leads.telegram_views Auto-extracted and updated fields for lead 22: ['problem_description', 'room_type_preference', 'meal_plan']
+2026-05-29 00:07:58 INFO apps.leads.telegram_views Received Telegram message from lead 22: только завтрак
+2026-05-29 00:07:58 INFO apps.leads.telegram_views Background AI thread started for lead 22
+2026-05-29 00:07:58 INFO apps.leads.telegram_views Lead 22: background AI thread dispatched
+2026-05-29 00:07:58 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-29 00:08:07 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:08:07 INFO apps.leads.ai_service Generated agent response (length: 962)
+2026-05-29 00:08:09 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:08:09 INFO apps.leads.agent_service Processed incoming message for lead 22: 0 actions taken
+2026-05-29 00:08:11 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:16 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:22 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:28 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:34 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:39 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:45 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:50 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:53 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:08:55 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:08:55 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=22 intent=booking confidence=1.00 booking_step=None
+2026-05-29 00:08:55 INFO apps.leads.ai_service generate_response called: 'только завтрак'
+2026-05-29 00:08:55 INFO apps.leads.ai_service [AI tools registered] ['get_room_options', 'get_room_images', 'get_family_room', 'transfer_to_manager']
+2026-05-29 00:08:57 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:08:57 INFO apps.leads.ai_service [AI RESPONSE DEBUG] final AI text response: Отлично, комфорт двухместный с завтраком на даты с 15 по 18 июня. Общая стоимость за 3 ночи составит 32700 сомов.
+
+Могу зарезервировать этот номер для Вас. Для этого мне понадобятся Ваши имя и контактный телефон. 🙏
+2026-05-29 00:08:57 INFO apps.leads.ai_service Generated AI response (length: 214)
+2026-05-29 00:08:59 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:09:01 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:09:02 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:09:02 INFO apps.leads.telegram_views Sent AI auto-response to lead 22 (2 message(s))
+2026-05-29 00:09:04 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:09:04 INFO apps.leads.telegram_views Updated conversation summary for lead 22: Комфорт двухместный, 2 гостя, 15-18 июня, только завтрак, по
+2026-05-29 00:09:07 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:09:07 INFO apps.leads.ai_service Extracted lead data: {'guest_count': 2, 'check_in_date': '2026-06-15', 'check_out_date': '2026-06-18', 'room_type_preference': 'комфорт', 'meal_plan': 'breakfast', 'problem_description': 'бронирование номера на двоих с 15 по 18 июня'}
+2026-05-29 00:09:07 INFO apps.leads.telegram_views Auto-extracted and updated fields for lead 22: ['problem_description', 'room_type_preference']
+2026-05-29 00:09:28 INFO apps.leads.telegram_views Received Telegram message from lead 22: Можете через 2 минуты написать пожалуйста, я пока
+2026-05-29 00:09:28 INFO apps.leads.telegram_views Background AI thread started for lead 22
+2026-05-29 00:09:28 INFO apps.leads.telegram_views Lead 22: background AI thread dispatched
+2026-05-29 00:09:28 INFO django.server "POST /api/telegram-webhook/ HTTP/1.1" 200 11
+2026-05-29 00:09:32 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 42
+2026-05-29 00:09:32 INFO django.server "GET /api/leads/ HTTP/1.1" 200 9984
+2026-05-29 00:09:37 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:09:37 INFO apps.leads.ai_service Generated agent response (length: 699)
+2026-05-29 00:09:37 INFO apps.leads.conversation_analyzer Objection detected for lead 22: timing
+2026-05-29 00:09:37 INFO apps.leads.agent_service Processed incoming message for lead 22: 1 actions taken
+2026-05-29 00:09:38 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:09:43 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:09:47 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:09:52 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:09:57 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:10:02 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:10:06 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:10:11 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:10:14 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendChatAction "HTTP/1.1 200 OK"
+2026-05-29 00:10:15 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:10:15 INFO apps.leads.agent_dispatcher [AgentDispatcher] lead=22 intent=undecided confidence=1.00 booking_step=None
+2026-05-29 00:10:17 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:10:17 INFO apps.leads.agent_dispatcher [ConsultantAgent] response length=37
+2026-05-29 00:10:18 INFO httpx HTTP Request: POST https://api.telegram.org/bot8671156073:AAGWaYZ5ak6Oif5uuP_Y-gEYq0I8lc7YsNU/sendMessage "HTTP/1.1 200 OK"
+2026-05-29 00:10:18 INFO apps.leads.telegram_views Sent AI auto-response to lead 22 (1 message(s))
+2026-05-29 00:10:20 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:10:20 INFO apps.leads.telegram_views Updated conversation summary for lead 22: Комфорт двухместный, 2 гостя, 15-18 июня, завтрак, гость обд
+2026-05-29 00:10:21 INFO httpx HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 00:10:21 INFO apps.leads.ai_service Extracted lead data: {'guest_count': 2, 'check_in_date': '2026-06-15', 'check_out_date': '2026-06-18', 'room_type_preference': 'Комфорт двухместный', 'meal_plan': 'breakfast'}
+2026-05-29 00:10:21 INFO apps.leads.telegram_views Auto-extracted and updated fields for lead 22: ['room_type_preference']
+2026-05-29 00:10:26 INFO django.server "GET /api/integrations/telegram/status/ HTTP/1.1" 200 150
+2026-05-29 00:10:26 INFO django.server "GET /api/integrations/whatsapp/status/ HTTP/1.1" 200 134
+2026-05-29 00:10:26 INFO django.server "GET /api/integrations/instagram/status/ HTTP/1.1" 200 495
+2026-05-29 00:10:26 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-29 00:10:27 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 42
+2026-05-29 00:10:27 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:10:27 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:10:27 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-29 00:10:27 INFO django.server "GET /api/integrations/telegram/status/ HTTP/1.1" 200 150
+2026-05-29 00:10:27 INFO django.server "GET /api/integrations/instagram/status/ HTTP/1.1" 200 495
+2026-05-29 00:10:27 INFO django.server "GET /api/integrations/whatsapp/status/ HTTP/1.1" 200 134
+2026-05-29 00:10:27 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10054
+2026-05-29 00:10:27 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-29 00:10:27 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-29 00:10:28 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10054
+2026-05-29 00:10:28 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-29 00:10:28 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 42
+2026-05-29 00:10:28 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:10:28 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:10:28 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-29 00:10:28 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-29 00:10:28 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-29 00:10:28 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-29 00:10:28 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10054
+2026-05-29 00:10:35 INFO django.server "GET /api/lead-notes/?lead=22 HTTP/1.1" 200 2
+2026-05-29 00:12:53 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:12:53 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 42
+2026-05-29 00:12:53 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:12:53 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-29 00:12:53 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-29 00:12:53 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-29 00:12:53 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-29 00:12:54 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10054
+2026-05-29 00:12:58 INFO django.server "GET /api/lead-notes/?lead=22 HTTP/1.1" 200 2
+2026-05-29 00:13:03 INFO django.server "GET /api/communications/unread-counts/ HTTP/1.1" 200 42
+2026-05-29 00:13:03 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:13:03 INFO django.server "GET /api/auth/me/ HTTP/1.1" 200 337
+2026-05-29 00:13:03 INFO django.server "GET /api/segments/ HTTP/1.1" 200 319
+2026-05-29 00:13:03 INFO django.server "GET /api/pipeline-stages/ HTTP/1.1" 200 978
+2026-05-29 00:13:03 INFO django.server "GET /api/leads/stats/ HTTP/1.1" 200 64
+2026-05-29 00:13:03 INFO django.server "GET /api/leads/ HTTP/1.1" 200 10054
+2026-05-29 00:13:03 INFO django.server "GET /api/organizations/ HTTP/1.1" 200 410
+2026-05-29 00:13:04 INFO django.server "GET /api/leads/22/ HTTP/1.1" 200 1638
+2026-05-29 00:13:04 INFO django.server "GET /api/lead-activities/?lead=22 HTTP/1.1" 200 15607
+2026-05-29 00:13:04 INFO django.server "GET /api/tasks/?lead=22 HTTP/1.1" 200 2
+2026-05-29 00:13:04 INFO django.server "GET /api/lead-notes/?lead=22 HTTP/1.1" 200 2
+2026-05-29 00:13:04 INFO django.server "GET /api/leads/22/goals/ HTTP/1.1" 200 1371
